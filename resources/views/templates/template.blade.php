@@ -6,7 +6,7 @@
         <link rel="stylesheet"  href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container">
             <ul class="nav nav-tabs">
                 <li>
                 <a class="navbar-brand" href="{{ asset('imagenes/ai.png') }}">
