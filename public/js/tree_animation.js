@@ -10,15 +10,15 @@ function TreeAnimation (nodes, arcs, w_widht, w_heigth){
 	this.Anodes=new Array()
 
 
-	this.addNode = function(name, shape, color){
-		var node=sys.addNode(name,{'alone':false, 'mass':2, 'color':color ,'shape': shape, 'label':name});
+	this.addNode = function(name, shape, color, label){
+		var node=sys.addNode(name,{'alone':false, 'mass':2, 'color':color ,'shape': shape, 'label':label});
 		this.Anodes.push(node)
 	}
 
 	this.addNodes =function(){
-		this.addNode(this.nodes[0], 'dot', 'black')
+		this.addNode(this.nodes[0], 'dot', 'black', 'RAIZ')
 		for(i=1;i<nodes.length;i++){
-			this.addNode(this.nodes[i], '', 'blue')
+			this.addNode(this.nodes[i], '', 'blue', this.nodes[i])
 		}
 	}
 
