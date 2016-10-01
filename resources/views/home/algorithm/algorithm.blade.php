@@ -22,51 +22,55 @@
         <p>
         </p>
         <h3 class="panel-title">Ventajas</h3>
-        <table class="table table-responsive">
-            <tr>
-                <th scope="row">-</th>
-                <td class="list-group-item">No se “pierde”, explorando caminos infructuosos que consumen mucho tiempo sin llegar solución o de los que no se vuelve nunca (bucles en profundidad)</td>
-            </tr>
-            <tr>
-                <th scope="row">-</th>
-                <td class="list-group-item">Si hay una solución la encuentra. Es mas si hay varias encuentra la optima.</td>
-            </tr>
-        </table>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th scope="row">-</th>
+                    <td class="list-group-item">No se “pierde”, explorando caminos infructuosos que consumen mucho tiempo sin llegar solución o de los que no se vuelve nunca (bucles en profundidad)</td>
+                </tr>
+                <tr>
+                    <th scope="row">-</th>
+                    <td class="list-group-item">Si hay una solución la encuentra. Es mas si hay varias encuentra la optima.</td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div class="panel-footer">
         <h3 class="panel-title">Algoritmo</h3>
-        <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Paso</th>
-                <th>Descripcion</th>
-            </tr>
-        </thead>
-            <tr>
-                <th scope="row">1</th>
-                <td class="list-group-item">Designamos a v como vértice activo y como raíz del árbol generador T que se
-                construirá. Se le asigna a v la etiqueta 0.</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td class="list-group-item">Sea i=0 y S={v}
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td class="list-group-item">Hallar el conjunto M de todos los vértices no etiquetados que son adyacentes a algún vértice de S</td>
-            </tr>   
-            <tr>
-                <th scope="row">4</th>
-                <td class="list-group-item">Si M es vacío el algoritmo termina. En caso contrario, se etiquetan todos los vértices
-                de M con i+1, se añaden a T las aristas entre cada vértice de S y su vecino en M y se
-                hace S=M. </td>
-            </tr>   
-            <tr>
-                <th scope="row">5</th>
-                <td class="list-group-item">i=i+1 y volver al paso 3. </td>
-            </tr>               
-        </table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <th scope="row">1</th>
+                    <td class="list-group-item">Designamos a v como vértice activo y como raíz del árbol generador T que se
+                    construirá. Se le asigna a v la etiqueta 0.</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td class="list-group-item">Sea i=0 y S={v}
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td class="list-group-item">Hallar el conjunto M de todos los vértices no etiquetados que son adyacentes a algún vértice de S</td>
+                </tr>   
+                <tr>
+                    <th scope="row">4</th>
+                    <td class="list-group-item">Si M es vacío el algoritmo termina. En caso contrario, se etiquetan todos los vértices
+                    de M con i+1, se añaden a T las aristas entre cada vértice de S y su vecino en M y se
+                    hace S=M. </td>
+                </tr>   
+                <tr>
+                    <th scope="row">5</th>
+                    <td class="list-group-item">i=i+1 y volver al paso 3. </td>
+                </tr>               
+            </table>
+        </div>
         <p>
             Al terminar el proceso se habrá construido un árbol generador del grafo inicial. En caso
             de G no ser conexo, habría que modificar el algoritmo para encontrar un árbol
