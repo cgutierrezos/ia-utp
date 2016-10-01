@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>@yield('title')</title>
+        <title> @yield('title') </title>
         <link rel="stylesheet"  href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     </head>
     <body>
