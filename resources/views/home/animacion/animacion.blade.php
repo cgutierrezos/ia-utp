@@ -14,7 +14,7 @@
 	<script src="js/amplitude_blind_search.js"></script>
 	
 
-	<div class="container-animatebutton">
+	<div class="container-fluid">
 		<button  class="btn btn-success" href='/animacion'  onclick='document.location.href= "/animacion"'>
 			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 
 			Gerenar nuevo arbol
@@ -25,8 +25,8 @@
 		</button>
 	</div>
 
-	<div class="container-tree">
-		<canvas id="viewport" width="800" height="600"></canvas>
+	<div class="container-fluid">
+		<canvas id="viewport" width="device-width" height="600"></canvas>
 	</div>
 
 
