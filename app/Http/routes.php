@@ -20,6 +20,12 @@ Route::get('algoritmos', function(){
 	return view('home.algorithm.algorithm');
 });
 
-Route::get('animacion', function(){
-	return view('home.animacion.animacion');
+Route::group(['prefix' => 'animacion'], function(){
+
+	Route::get('anchura', function(){
+		return view('home.animacion.anchura.animacion');
+	});
+
+
+	
 });

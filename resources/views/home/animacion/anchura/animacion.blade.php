@@ -4,15 +4,14 @@
 
 @section('body')
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/arbor-tween.js"></script>
-	<script src="js/arbor.js"></script>
-	<script src="js/graphics.js"></script>
-	<script src="js/renderer.js"></script>
-	<script src="js/tree_generate.js"></script>
-	<script src="js/tree_animation.js"></script>
-	<script src="js/amplitude_blind_search.js"></script>
-	
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/arbor-tween.js') }}"></script>
+	<script src="{{ asset('js/arbor.js') }}"></script>
+	<script src="{{ asset('js/graphics.js') }}"></script>
+	<script src="{{ asset('js/renderer.js') }}"></script>
+	<script src="{{ asset('js/tree_generate.js') }}"></script>
+	<script src="{{ asset('js/tree_animation.js') }}"></script>
+	<script src="{{ asset('js/amplitude_blind_search.js') }}"></script>
 
 	<div class="container-fluid">
 		<button  class="btn btn-success" href='/animacion'  onclick='document.location.href= "/animacion"'>
@@ -56,3 +55,4 @@
 	</script>
 
 @endsection
+

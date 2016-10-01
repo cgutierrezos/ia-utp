@@ -1,38 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
         <title> @yield('title') </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet"  href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     </head>
     <body>
-        <nav class="nav nav-tabs nav-justified">
-            <div class="navbar-header">
-                <li>
-                    <a class="navbar-brand" href="{{ asset('imagenes/ai.png') }}">
-                        <img alt="Brand" alt="A.I" width="100" height="30"  src="{{ asset('imagenes/ai.png')}}">
-                    </a>
-                </li>
-            </div>
-            <li role="presentation" class="active">
-                <a href="/">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
-                    Inicio
-                </a>
-            </li>
-            <li role="presentation">
-                <a href="/algoritmos">
-                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 
-                    Algoritmos
-                </a>
-            </li>
-            <li role="presentation">
-                <a href="/animacion">
-                    <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
-                    Animacion
-                </a>
-            </li>
-        </ul>
+        <script src=" {{ asset('plugins/jquery/js/jquery-3.1.1.js') }}"></script>
+        <script src=" {{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+        @include('templates.nav')
         <p></p>
         @yield('body')
     </body>
