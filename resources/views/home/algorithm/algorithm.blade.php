@@ -22,7 +22,7 @@
         <p>
         </p>
         <h3 class="panel-title">Ventajas</h3>
-        <table class="table table-condensed">
+        <table class="table table-responsive">
             <tr>
                 <th scope="row">-</th>
                 <td class="list-group-item">No se “pierde”, explorando caminos infructuosos que consumen mucho tiempo sin llegar solución o de los que no se vuelve nunca (bucles en profundidad)</td>
@@ -35,7 +35,7 @@
     </div>
     <div class="panel-footer">
         <h3 class="panel-title">Algoritmo</h3>
-        <table class="table">
+        <table class="table table-responsive">
         <thead>
             <tr>
                 <th>Paso</th>
