@@ -6,33 +6,33 @@
         <link rel="stylesheet"  href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
     </head>
     <body>
-        <div class="container">
-            <ul class="nav nav-tabs">
+        <nav class="nav nav-tabs nav-justified">
+            <div class="navbar-header">
                 <li>
-                <a class="navbar-brand" href="{{ asset('imagenes/ai.png') }}">
-                <img alt="Brand" alt="A.I" width="100" height="30"  src="{{ asset('imagenes/ai.png')}}">
+                    <a class="navbar-brand" href="{{ asset('imagenes/ai.png') }}">
+                        <img alt="Brand" alt="A.I" width="100" height="30"  src="{{ asset('imagenes/ai.png')}}">
+                    </a>
+                </li>
+            </div>
+            <li role="presentation" class="active">
+                <a href="/">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
+                    Inicio
                 </a>
-                </li>
-                <li role="presentation" class="active">
-                    <a href="/">
-                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
-                        Inicio
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="/algoritmos">
-                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 
-                        Algoritmos
-                    </a>
-                </li>
-                <li role="presentation">
-                    <a href="/animacion">
-                        <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
-                        Animacion
-                    </a>
-                </li>
-            </ul>
-        </div>
+            </li>
+            <li role="presentation">
+                <a href="/algoritmos">
+                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 
+                    Algoritmos
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="/animacion">
+                    <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+                    Animacion
+                </a>
+            </li>
+        </ul>
         <p></p>
         @yield('body')
     </body>
