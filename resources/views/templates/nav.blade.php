@@ -1,9 +1,4 @@
-<ul class="nav nav-tabs">
-  <li>
-      <a>
-        <img alt="A.I" width="100" height="30"    src="{{asset('imagenes/ai.png')}}">
-      </a>
-  </li>
+<ul class="nav nav-pills nav-justified">
   <li role="presentation" class="active">
     <a href="/">
       <span class="glyphicon glyphicon-home" aria-hidden="true"></span> 
