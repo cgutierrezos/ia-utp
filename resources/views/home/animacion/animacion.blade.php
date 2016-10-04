@@ -24,7 +24,7 @@
 	
 
 	<div class="container-fluid">
-		<button  class="btn btn-success btn-lg btn-block"  onclick='javascript:location.reload()'>
+		<button  class="btn btn-warning btn-lg btn-block"  onclick='javascript:location.reload()'>
 			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 
 			Gerenar nuevo arbol
 		</button>
@@ -45,7 +45,7 @@
 		function resize_canvas(){
             var canvas = document.getElementById("viewport");
             if (canvas.width  < window.innerWidth){
-                canvas.width  = window.innerWidth
+                canvas.width  = window.innerWidth-80
             }
 
             if (canvas.height < window.innerHeight){
