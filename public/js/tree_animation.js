@@ -1,37 +1,53 @@
-function TreeAnimation (nodes, arcs, w_widht, w_heigth){
-  	this.nodes=nodes
-	this.arcs=arcs
-	this.w_widht=w_widht
-	this.w_heigth=w_heigth
+function TreeAnimation (raiz){
+  	this.raiz=raiz
+  	this.ranode=null
+  	this.anodes=[]
+  	this.aedges=[]
 	this.node_cont=0
-	this.node_cont_end=this.nodes.length
 	this.arc_cont=0
-	this.Aedges=new Array()
-	this.Anodes=new Array()
+	this.queue=[]
 
 
-	this.addNode = function(name, shape, color, label){
-		var node=sys.addNode(name,{'alone':false, 'mass':2, 'color':color ,'shape': shape, 'label':label});
-		this.Anodes.push(node)
-	}
-
-	this.addNodes =function(){
-		this.addNode(this.nodes[0], 'dot', 'black', 'RAIZ')
-		for(i=1;i<nodes.length;i++){
-			this.addNode(this.nodes[i], '', 'blue', this.nodes[i])
-		}
+	this.addNode = function(anode){
+		var n=sys.addNode(anode.node.name, {'alone':false, 'mass':2, 'color':anode.color ,'shape': anode.shape, 'label':anode.label});
+		this.anodes[anode.node.name]=anode
 	}
 
 
-	this.addEdge = function(arc){
-		var e=sys.addEdge(arc[0], arc[1], {length:5, directed:true, pointSize:10, color:"blue"})
-		this.Aedges.push(e)
+
+	this.addEdge = function(anodei, anodef){
+		var e=sys.addEdge(anodei.node.name, anodef.node.name, {length:5, directed:true, pointSize:10, color:"blue"})
+		anodei.addAnode(anodef)
+		anodei.addAedge(anodei.node.name+','+anodef.node.name, e)
+		this.aedges[anodei.node.name+','+anodef.node.name]=e
 	}
 
-	this.addEdges = function(){
-		for(i=0;i<this.arcs.length;i++){
-			this.addEdge(this.arcs[i])
-		}
+
+	this.addAll =function(){
+		//alert(this.raiz.print())
+        this.ranode=new Anode(this.raiz)
+        this.ranode.label="RAIZ"
+        this.ranode.shape="dot"
+        this.ranode.color="black"
+        this.queue.push(this.ranode)
+
+		//Hasta que visite todos los nodos
+
+        while (this.queue.length != 0) {
+
+            var anodei = this.queue.shift() //Se saca el primero nodo de la cola
+
+            this.addNode(anodei)
+			//Se busca en la matriz que representa el grafo los nodos adyacentes
+
+            for (i = 0; i < anodei.node.nodes.length; i++) {
+            	var anodef=new Anode(anodei.node.nodes[i])
+
+				this.queue.push(anodef);
+
+				this.addEdge(anodei, anodef)
+            }
+        }
 	}
 
 
@@ -48,7 +64,7 @@ function TreeAnimation (nodes, arcs, w_widht, w_heigth){
 	}
 
 	this.EdgeDesseleccion = function(edge, c){
-		sys.tweenEdge(edge, edge[1], 1, {color: c})
+		sys.tweenEdge(edge, 0, {color: c})
 	}
 
 	this.p = function(text){
@@ -65,27 +81,49 @@ function TreeAnimation (nodes, arcs, w_widht, w_heigth){
 	}
 
 
-	this.animation = function (edges, arcs, nodeF){
-		if(this.arc_cont<arcs.length){
-			this.NodeSeleccion(arcs[this.arc_cont][0], "red")
-			
+	this.animation = function (arcs, nodeF){
+		//alert("entro a animation: "+arcs)
 
-			var node=arcs[this.arc_cont][1]
-			if(nodeF == node){
-				this.NodeSeleccion(nodeF, "green")
-				this.EdgeSeleccion(edges[this.arc_cont], "green")
+
+		if(this.arc_cont<arcs.length){
+
+			var arc=arcs[this.arc_cont]
+			var nodes=arc.split(',')
+
+
+			this.NodeSeleccion(this.anodes[nodes[0]].node.name, "red")
+			
+			
+			if(nodeF == nodes[1]){
+				this.NodeSeleccion(this.anodes[nodeF].node.name, "green")
+				//alert("nodef  "+this.raiz.Aedges[arcs[this.arc_cont]])
+				this.EdgeSeleccion(this.aedges[arc], "green")
 			}
 			else{
-				this.NodeSeleccion(arcs[this.arc_cont][1], "red")
-				this.EdgeSeleccion(edges[this.arc_cont], "red")
+				this.NodeSeleccion(this.anodes[nodes[1]].node.name, "red")
+				//alert("node  "+this.raiz.Aedges[arcs[this.arc_cont]])
+				this.EdgeSeleccion(this.aedges[arc], "red")
+			}
+
+			
+			
+
+			this.arc_cont+=1
+
+		}else{
+			
+			if(nodeF!=null){
+				this.NodeSeleccion(this.anodes[nodeF].node.name, "green")
+				alert("EL NODO SOLUCION ES EL: "+nodeF)
+			}else{
+				alert("NO EXISTE SOLUCION")
 			}
 			
 			
-			//this.EdgeSeleccion(arcs[this.arc_cont])
-			
-			this.arc_cont+=1
-
 		}
+
+
+
 		
 	}
 

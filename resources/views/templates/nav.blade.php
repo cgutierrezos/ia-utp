@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -30,7 +30,7 @@
             <ul class="dropdown-menu">
               <li><a href="/animacion/anchura"> 
                 <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda en anchura</a></li>
-              <li><a href="/animacion/anchura">
+              <li><a href="/animacion/profundidad">
               <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda en profundidad</a></li>
             </ul>
           </li>

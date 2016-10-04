@@ -23,9 +23,11 @@ Route::get('algoritmos', function(){
 Route::group(['prefix' => 'animacion'], function(){
 
 	Route::get('anchura', function(){
-		return view('home.animacion.anchura.animacion');
+		return view('home.animacion.animacion', ['search' => 0]);
 	});
 
+	Route::get('profundidad', function(){
+		return view('home.animacion.animacion', ['search' => 1]);
+	});
 
-	
 });
