@@ -24,11 +24,11 @@
 	
 
 	<div class="container-fluid">
-		<button  class="btn btn-success"  onclick='javascript:location.reload()'>
+		<button  class="btn btn-success btn-lg btn-block"  onclick='javascript:location.reload()'>
 			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> 
 			Gerenar nuevo arbol
 		</button>
-		<button id="banimar" class="btn btn-success" disabled='true' onclick="animar()">
+		<button id="banimar" class="btn btn-success btn-lg btn-block" disabled='true' onclick="animar()">
 			<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
 			Siguiente Animacion
 		</button>
