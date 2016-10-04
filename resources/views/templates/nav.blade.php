@@ -3,7 +3,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs">
           <li>
               <a>
                 <img alt="A.I" width="100" height="30"    src="{{asset('imagenes/ai.png')}}">
