@@ -30,7 +30,6 @@ function BusquedaCiega(raiz){
             //alert("estoy en nodo: "+nodo.name+"   value: "+nodo.value)
 
             if(fstack.length!=0){
-                alert(fstack[fstack.length-1].name+"     "+nodo.name)
                 this.arcos_recorridos.push(fstack.shift().name+','+nodo.name)
             }
 
