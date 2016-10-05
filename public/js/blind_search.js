@@ -16,6 +16,8 @@ function BusquedaCiega(raiz){
 
         this.queue.push(this.raiz)
 
+        var fstack=[]
+
 		//Hasta que visite todos los nodos
 
         //alert('raiz name: '+this.raiz.name+"  raiz nodes_: "+this.raiz.nodes)
@@ -26,6 +28,12 @@ function BusquedaCiega(raiz){
 
             //alert("nodo name: "+nodo.name+"   node nodes: "+node.nodes)
             //alert("estoy en nodo: "+nodo.name+"   value: "+nodo.value)
+
+            if(fstack.length!=0){
+                alert(fstack[fstack.length-1].name+"     "+nodo.name)
+                this.arcos_recorridos.push(fstack.shift().name+','+nodo.name)
+            }
+
             if(nodo.value){
                 this.nodesol=nodo.name
             	return 1
@@ -40,13 +48,12 @@ function BusquedaCiega(raiz){
                 //alert("node: "+nodo.nodes[i].name+"   visited: "+this.visited[nodo.nodes[i].name])
                 
                 if (!this.visited[nodo.nodes[i].name]) {
-
-                    //alert("visitando nodo: "+nodo.nodes[i].name)
-                	this.arcos_recorridos.push(nodo.name+','+nodo.nodes[i].name)
                     
                     this.queue.push(nodo.nodes[i]);//Se agrega a la cola de visitas                    
 
                     this.visited[nodo.nodes[i].name] = true;//Se marca como visitado
+
+                    fstack.push(nodo)
                 }
             }
         }
