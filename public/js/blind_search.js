@@ -10,12 +10,7 @@ function BusquedaCiega(raiz){
 
 	this.recorridoAnchura = function() {
 
-       
-        
-        
         this.visited[this.raiz.name] = true
-
-		
 
 		//Se agrega el nodo a la cola de visitas
 
@@ -47,21 +42,15 @@ function BusquedaCiega(raiz){
                 if (!this.visited[nodo.nodes[i].name]) {
 
                     //alert("visitando nodo: "+nodo.nodes[i].name)
-
                 	this.arcos_recorridos.push(nodo.name+','+nodo.nodes[i].name)
                     
                     this.queue.push(nodo.nodes[i]);//Se agrega a la cola de visitas                    
 
                     this.visited[nodo.nodes[i].name] = true;//Se marca como visitado
-
                 }
-
             }
-
         }
-
         return -1
-
 	}
 
 
@@ -77,7 +66,6 @@ function BusquedaCiega(raiz){
         //marcamos origen como visitado
         this.visited[this.raiz.name]=true
 
-
         //mientras S no este vacío:
         while(this.stack.length!=0){
       
@@ -88,14 +76,11 @@ function BusquedaCiega(raiz){
                 this.arcos_recorridos.push(fstack.pop().name+','+nodo.name)
             }
 
-
-
             if(nodo.value){
                 this.nodesol=nodo.name
                 return -1
             }
-            
-
+   
             //para cada vertice w adyacente a v en el Grafo:
             for(i=0; i<nodo.nodes.length; i++){
 
@@ -111,9 +96,7 @@ function BusquedaCiega(raiz){
                     fstack.push(nodo)
                 }
             }  
-        }  
-
-
+        }
         return -1    
     }
 

@@ -6,6 +6,7 @@ function TreeAnimation (raiz){
 	this.node_cont=0
 	this.arc_cont=0
 	this.queue=[]
+	this.fin_animacion=false
 
 
 	this.addNode = function(anode){
@@ -112,12 +113,16 @@ function TreeAnimation (raiz){
 
 		}else{
 			
-			if(nodeF!=null){
-				this.NodeSeleccion(this.anodes[nodeF].node.name, "green")
-				alert("EL NODO SOLUCION ES EL: "+nodeF)
-			}else{
-				alert("NO EXISTE SOLUCION")
+			if(!this.fin_animacion){
+				if(nodeF!=null){
+					this.NodeSeleccion(this.anodes[nodeF].node.name, "green")
+					alert("EL NODO SOLUCION ES EL: "+nodeF)
+				}else{
+					alert("NO EXISTE SOLUCION")
+				}
+				this.fin_animacion=true
 			}
+			
 			
 			
 		}

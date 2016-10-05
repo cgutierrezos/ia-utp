@@ -1,7 +1,8 @@
 var tree, Treeanimation, Busqueda, node=null
 
 function inicio(){
-	document.getElementById("banimar").disabled =false ;
+	document.getElementById("siguiente").disabled =false ;
+	var tipo_busqueda=<?echo $search;?>
 	tree = new Tree()
 	tree.generateTree()
 
@@ -10,7 +11,10 @@ function inicio(){
 	//alert("raiz: "+tree.raiz.print())
 	//alert(tree.raiz.print())
 	Busqueda=new BusquedaCiega(tree.raiz)
-	Busqueda.recorridoAnchura()
+	if(tipo_busqueda==0)
+		Busqueda.recorridoAnchura()
+	else
+		Busqueda.recorridoProfundidad(tree.raiz, [], [])
 	//alert("nodo solucion: "+Busqueda.nodesol)
 
 	Treeanimation=new TreeAnimation(tree.raiz)

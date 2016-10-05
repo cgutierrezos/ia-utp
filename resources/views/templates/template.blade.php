@@ -10,8 +10,7 @@
         <script src=" {{ asset('plugins/jquery/js/jquery-3.1.1.js') }}"></script>
         <script src=" {{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
         @include('templates.nav')
-        <p>
-        </p>
+        <p></p>
         @yield('body')
     </body>
 </html>
