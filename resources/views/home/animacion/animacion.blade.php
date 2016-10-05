@@ -24,8 +24,9 @@
 			Gerenar nuevo arbol
 		</button>
 		<button id="banimar" class="btn btn-success btn-lg btn-block"  onclick='inicio_animacion()'>
-			<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span class="glyphicon glyphicon-pause" aria-hidden="true"></span> 
+			<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
 			Iniciar o Detener Animacion (Automatico)
+			<span class="glyphicon glyphicon-pause" aria-hidden="true"></span> 
 		</button>
 		<button id="siguiente" class="btn btn-success btn-lg btn-block" onclick='animar()'">
 			<span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> 
@@ -64,7 +65,7 @@
             }
 
             if (canvas.height < window.innerHeight){
-                canvas.height = window.innerHeight-160
+                canvas.height = window.innerHeight-210
             }
         }
 

@@ -18,9 +18,9 @@
     <ul class="dropdown-menu">
       <li class="dropdown-header">BUSQUEDA CIEGA</li>
       <li><a href="/animacion/anchura"> 
-        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda En Anchura</a></li>
+        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Busqueda En Anchura</a></li>
       <li><a href="/animacion/profundidad">
-      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda En Profundidad</a></li>
+      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Busqueda En Profundidad</a></li>
       <li role="separator" class="divider"></li>
     </ul>
   </li>
