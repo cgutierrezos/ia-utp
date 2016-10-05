@@ -13,13 +13,15 @@
   </li>
   <li class="dropdown">
     <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-      <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Animacion <span class="caret"></span>
+      <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Animaciones <span class="caret"></span>
     </a>
     <ul class="dropdown-menu">
+      <li class="dropdown-header">BUSQUEDA CIEGA</li>
       <li><a href="/animacion/anchura"> 
-        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda en anchura</a></li>
+        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda En Anchura</a></li>
       <li><a href="/animacion/profundidad">
-      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda en profundidad</a></li>
+      <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>  Busqueda En Profundidad</a></li>
+      <li role="separator" class="divider"></li>
     </ul>
   </li>
 </ul>
