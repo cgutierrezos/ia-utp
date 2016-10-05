@@ -2,6 +2,7 @@ function BusquedaCiega(raiz){
 
 	this.raiz=raiz
 	this.queue=[]
+    this.stack=[]
 	this.visited=[]
     this.nodesol=null
     this.arcos_recorridos=[]
@@ -64,45 +65,56 @@ function BusquedaCiega(raiz){
 	}
 
 
-    this.recorridoProfundidad =function(raiz, arcos_recorridos, visited) {
+    this.recorridoProfundidad =function(arcos_recorridos) {
 
-        alert("raiz: "+raiz.name+"   raiz nodes: "+raiz.print()+"   arcos_recorridos: "+arcos_recorridos)
-        
-        //El nodo inicial ya está visitado
-        var nodo=raiz
-        
-        visited[nodo.name] = true
-        //Cola de visitas de los nodos adyacentes
-        //Se lista el nodo como ya recorrido
+        //alert("raiz: "+raiz.name+"   raiz nodes: "+raiz.print()+"   arcos_recorridos: "+arcos_recorridos)
 
-        //Se agrega el nodo a la cola de visitas
+        //agregamos origen a la pila S
+        this.stack.push(this.raiz)
 
-         //Se busca en la matriz que representa el grafo los nodos adyacentes
-        if(nodo.value){
-            this.nodesol=nodo.name
-            this.arcos_recorridos=arcos_recorridos
-            return -1
-        }
+        var fstack=[]
 
-        for (i = 0; i < nodo.nodes.length; i++) {
+        //marcamos origen como visitado
+        this.visited[this.raiz.name]=true
 
-        //Si es un nodo adyacente y no está visitado entonces
 
-            if (!visited[nodo.nodes[i].name]) {
+        //mientras S no este vacío:
+        while(this.stack.length!=0){
+      
+            //sacamos un elemento de la pila S llamado v
+            var nodo=this.stack.pop()
 
-                arcos_recorridos.push(nodo.name+','+nodo.nodes[i].name)
-                this.recorridoProfundidad(nodo.nodes[i], arcos_recorridos, visited)
-
+            if(fstack.length!=0){
+                this.arcos_recorridos.push(fstack.pop().name+','+nodo.name)
             }
 
+
+
+            if(nodo.value){
+                this.nodesol=nodo.name
+                return -1
+            }
             
-        }
+
+            //para cada vertice w adyacente a v en el Grafo:
+            for(i=0; i<nodo.nodes.length; i++){
+
+                //si w no ah sido visitado:
+                if(!this.visited[nodo.nodes[i].name]){
+
+                    //marcamos como visitado w
+                    this.visited[nodo.nodes[i].name]=true
+
+                    //insertamos w dentro de la pila S
+                    this.stack.push(nodo.nodes[i])
+
+                    fstack.push(nodo)
+                }
+            }  
+        }  
 
 
-        
-
-        
-        
+        return -1    
     }
 
 

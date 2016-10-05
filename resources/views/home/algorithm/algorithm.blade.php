@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="panel panel-info">
         	<div class="panel-heading">
-        	        <h3 class="panel-title">Busqueda en anchura o amplitud</h3>
+        	   <h3 class="panel-title">Busqueda en anchura o amplitud</h3>
         	</div>
         	<div class="panel-body">
                 La búsqueda en anchura es otro procedimiento para visitar sistemáticamente todos los
@@ -61,9 +61,8 @@
                         </tr>   
                         <tr>
                             <th scope="row">4</th>
-                            <td class="list-group-item">Si M es vacío el algoritmo termina. En caso contrario, se etiquetan todos los vértices
-                            de M con i+1, se añaden a T las aristas entre cada vértice de S y su vecino en M y se
-                            hace S=M. </td>
+                            <td class="list-group-item">Si M es vacío el algoritmo termina. En caso contrario, se etiquetan todos los vértices de M con i+1, se añaden a T las aristas entre cada vértice de S y su vecino en M y se
+                            hace S=M.</td>
                         </tr>   
                         <tr>
                             <th scope="row">5</th>
@@ -112,35 +111,31 @@
             <div class="panel-footer">
                 <h3 class="panel-title">Algoritmo</h3>
                 <table class="table">
-                <thead>
-                    <tr>
-                        <th>Paso</th>
-                        <th>Descripcion</th>
-                    </tr>
-                </thead>
+                    <thead>
+                        <tr>
+                            <th>Paso</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
                     <tr>
                         <th scope="row">1</th>
-                        <td class="list-group-item">Se comienza en un vértice v (vértice activo) y se toma como la raíz del árbol
-        					generador T que se construirá. Se marca el vértice v
+                        <td class="list-group-item">Se comienza en un vértice v (vértice activo) y se toma como la raíz del árbol generador T que se construirá. Se marca el vértice v
         				</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
-                        <td class="list-group-item">Se elige un vértice u, no marcado, entre los vecinos del vértice activo. Si no existe
-        					tal vértice, ir a 4. 
+                        <td class="list-group-item">Se elige un vértice u, no marcado, entre los vecinos del vértice activo. Si no existe tal vértice, ir a 4. 
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td class="list-group-item">Se añade la arista (v, u) al árbol T. Se marca el vértice u y se toma como activo. Ir al
-        					paso 2
+                        <td class="list-group-item">Se añade la arista (v, u) al árbol T. Se marca el vértice u y se toma como activo. Ir al paso 2
         				</td>
                     </tr>   
                     <tr>
                         <th scope="row">4</th>
                         <td class="list-group-item">Si se han alcanzado todos los vértices de G el algoritmo termina. En caso contrario,
-        					se toma el vértice padre del vértice activo como nuevo vértice activo y se vuelve al
-        					paso 2.
+        					se toma el vértice padre del vértice activo como nuevo vértice activo y se vuelve al paso 2.
         				</td>
                     </tr>             
                 </table>

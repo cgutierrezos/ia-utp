@@ -49,7 +49,7 @@
             }
 
             if (canvas.height < window.innerHeight){
-                canvas.height = window.innerHeight
+                canvas.height = window.innerHeight-160
             }
         }
 
