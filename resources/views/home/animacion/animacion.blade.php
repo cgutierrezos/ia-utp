@@ -21,11 +21,11 @@
 			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Gerenar nuevo arbol
 		</button>
 		<button id="banimar" class="btn btn-success btn-lg btn-block"  onclick='inicio_animacion()'>
-			<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Iniciar o Detener Animacion (Automatico)
+			<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Iniciar Detener Animacion (Aut)
 			<span class="glyphicon glyphicon-pause" aria-hidden="true"></span> 
 		</button>
 		<button id="siguiente" class="btn btn-success btn-lg btn-block" onclick='animar()'">
-			<span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> Siguiente Paso (Manual)
+			<span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> Siguiente Paso (Man)
 		</button>
 	</div>
 
