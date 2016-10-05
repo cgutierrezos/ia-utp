@@ -27,7 +27,7 @@
 			<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
 			Detener o Iniciar Animacion (Automatico)
 		</button>
-		<button id="siguiente" class="btn btn-success btn-lg btn-block" disabled='true' onclick='animar()'">
+		<button id="siguiente" class="btn btn-success btn-lg btn-block" onclick='animar()'">
 			<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> 
 			Siguiente Paso (Manual)
 		</button>

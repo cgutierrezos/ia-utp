@@ -17,7 +17,7 @@ function TreeAnimation (raiz){
 
 
 	this.addEdge = function(anodei, anodef){
-		var e=sys.addEdge(anodei.node.name, anodef.node.name, {length:5, directed:true, pointSize:10, color:"blue"})
+		var e=sys.addEdge(anodei.node.name, anodef.node.name, {length:0, directed:true, pointSize:20, color:"blue"})
 		anodei.addAnode(anodef)
 		anodei.addAedge(anodei.node.name+','+anodef.node.name, e)
 		this.aedges[anodei.node.name+','+anodef.node.name]=e
