@@ -45,7 +45,7 @@
 		document.getElementById("body").onresize =resize_canvas() 
 		function inicio_animacion(){
 			if(iniciar_animacion){
-				animacion=window.setInterval(animar, 1000)
+				animacion=window.setInterval(animar, 2000)
 				iniciar_animacion=false
 				document.getElementById("siguiente").disabled =true ;
 			}

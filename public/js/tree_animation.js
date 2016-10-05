@@ -53,7 +53,7 @@ function TreeAnimation (raiz){
 
 
 	this.NodeSeleccion= function(node, c){
-		sys.tweenNode(node, 4, {color:c, radius:4})
+		sys.tweenNode(node, 2, {color:c, radius:4})
 	}
 
 	this.NodeDesseleccion = function(node, c){
