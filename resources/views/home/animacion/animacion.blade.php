@@ -1,4 +1,4 @@
-@extends('templates.template')
+@extends('templates.template2')
 
 @section('title', 'animacion')
 
@@ -14,22 +14,14 @@
 	<script src="{{ asset('js/tree_generate.js') }}"></script>
 	<script src="{{ asset('js/blind_search.js') }}"></script>
 	<script src="{{ asset('js/tree_animation.js') }}"></script>
-	
-	
-	<div class="container-fluid">
-		<button  class="btn btn-warning btn-lg btn-block"  onclick='javascript:location.reload()'>
-			<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Gerenar nuevo arbol
-		</button>
-		<button id="banimar" class="btn btn-success btn-lg btn-block"  onclick='inicio_animacion()'>
-			<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Iniciar Detener Animacion (Aut)
-			<span class="glyphicon glyphicon-pause" aria-hidden="true"></span> 
-		</button>
-		<button id="siguiente" class="btn btn-success btn-lg btn-block" onclick='animar()'">
-			<span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> Siguiente Paso (Man)
-		</button>
-	</div>
 
-	<div class="container-fluid">
+
+	@include('templates.nav2')
+
+	@include('templates.banner_animation')
+
+
+	<div class="row">
 		<canvas id="viewport" width="screen.width" height="600"></canvas>
 	</div>
 
@@ -43,12 +35,15 @@
 			if(iniciar_animacion){
 				animacion=window.setInterval(animar, 2000)
 				iniciar_animacion=false
-				document.getElementById("siguiente").disabled =true ;
+				document.getElementById("banimar").innerHTML = '<span id="play_animar" class="glyphicon glyphicon-pause" aria-hidden="true"></span> Detener Animacion (Aut)';
+				
+				//document.getElementById("banimar").innerHTML = "Detener Animacion (Aut)";
 			}
 			else{
 				clearInterval(animacion)
 				iniciar_animacion=true
-				document.getElementById("siguiente").disabled =false ;
+				document.getElementById("banimar").innerHTML = '<span id="play_animar" class="glyphicon glyphicon-play" aria-hidden="true"></span> Iniciar Animacion (Aut)';
+				//document.getElementById("banimar").innerHTML = "Iniciar Animacion (Aut)";
 			}
 		}
 		
