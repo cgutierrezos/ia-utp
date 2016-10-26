@@ -1,4 +1,4 @@
-<section id="four" class="wrapper style1 special fade-up">
+<section id='<?php echo $id ?>' class="wrapper style1 special fade-up">
 	<div class="container">
 		<header class="major">
 			<h2>Accumsan sed tempus adipiscing blandit</h2>
@@ -40,7 +40,7 @@
 		</div>
 		<footer class="major">
 			<ul class="actions">
-				<li><a href="#" class="button">Magna sed feugiat</a></li>
+				<li><a href="<?php echo $liref ?>" class="button" style='<?php echo $listyle ?>'><?php echo $lititle ?></a></li>
 			</ul>
 		</footer>
 	</div>

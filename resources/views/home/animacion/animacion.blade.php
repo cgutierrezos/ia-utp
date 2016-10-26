@@ -31,6 +31,7 @@
 		var tree, Treeanimation, Busqueda, node=null
 
 		document.getElementById("body").onresize =resize_canvas() 
+
 		function inicio_animacion(){
 			if(iniciar_animacion){
 				animacion=window.setInterval(animar, 2000)
@@ -64,9 +65,12 @@
 
 		function inicio(){
 			var tipo_busqueda=<?php echo $search ?>;
-			tree = new Tree()
-			tree.generateTree()
-
+			if(tipo_busqueda<2){
+				tree = new Tree()
+				tree.generateTree()
+			}
+			
+			
 			//alert("tree: "+tree.raiz.print())
 			
 			//alert("raiz: "+tree.raiz.print())

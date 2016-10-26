@@ -1,26 +1,15 @@
-@extends('templates.template2')
+@extends('layouts.app')
 
-@section('title', 'IA - UTP')
+@section('title', 'home')
 
 @section('body')
 
-	<div id="page-wrapper">
-
-		<!-- Header -->
-		@include('templates.nav2')
-
-		<!-- Banner -->
-		@include('templates.banner_welcome', ['title' => 'Inteligencia Artificial', 'paragraph' => 'inteligencia exhibida por máquinas', 'style' => 'display: none', 'atitle' => 'siguiente'])
-
-
-		<!-- Four -->
-		@include('templates.wrapper_fade_up')
-
-		<!-- Five -->
-		@include('templates.wrapper_fade')
-
-		<!-- Footer -->
-		@include('templates.footer')
-
-	</div>
+    @include('templates.banner_welcome', [
+        'id' => 'inicio',
+        'title' => 'Inteligencia Artificial',
+        'paragraph' => 'la inteligencia exhibida por máquinas',
+        'aref' => '',
+        'astyle' => 'display:none',
+        'atitle' => 'siguiente'
+    ])
 @endsection

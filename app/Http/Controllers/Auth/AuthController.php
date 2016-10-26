@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -29,6 +30,7 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    protected $loginPath = '/login';
 
     /**
      * Create a new authentication controller instance.
@@ -63,10 +65,28 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $confirmation_code=str_random(100);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'confirmation_code' => $confirmation_code
         ]);
+
+
+        return redirect('/');
+
+
     }
+
+
+    /**
+     * Handle an authentication attempt.
+     *
+     * @return Response
+     */
+
+    
+ 
 }

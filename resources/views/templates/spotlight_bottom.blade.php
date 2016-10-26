@@ -1,4 +1,4 @@
-<section id="one" class="spotlight style1 bottom">
+<section id="<?php echo $id ?>" class="spotlight style1 bottom">
 	<span class="image fit main"><img src="{{ asset('plugins/landed/images/pic02.jpg') }}" alt="" /></span>
 	<div class="content">
 		<div class="container">
@@ -18,5 +18,5 @@
 			</div>
 		</div>
 	</div>
-	<a href="#two" class="goto-next scrolly" style="" ><?php echo $atitle ?></a>
+	<a href="<?php echo $aref ?>" class="goto-next scrolly" style="<?php echo $astyle ?>" ><?php echo $atitle ?></a>
 </section>

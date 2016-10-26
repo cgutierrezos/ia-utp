@@ -20,6 +20,7 @@
 		
 
 		@yield('body')
+		
 		<!-- Scripts -->
 		<script src="{{ asset('plugins/landed/js/jquery.min.js') }}"></script>
 		<script src="{{ asset('plugins/landed/js/jquery.scrolly.min.js') }}"></script>

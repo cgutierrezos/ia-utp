@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<header>
+	<header id='<?php echo $id ?>'>
 		<h2><?php echo $title ?></h2>
 		<p><?php echo $paragraph ?></p>
 	</header>
@@ -14,6 +14,6 @@
 
 @section('scrolly')
 
-	<a href="#one" class="goto-next scrolly" style='<?php echo $style ?>'><?php echo $atitle ?></a>
+	<a href="<?php echo $aref ?>" class="goto-next scrolly" style='<?php echo $astyle ?>'><?php echo $atitle ?></a>
 
 @endsection
