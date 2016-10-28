@@ -7,7 +7,7 @@
 		<ul class="actions">
 			<li>
 				<a class="button special big" onclick='javascript:location.reload()'>
-					<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Gerenar nuevo arbol
+					<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Recargar Pagina
 				</a>
 			</li>
 			<li>

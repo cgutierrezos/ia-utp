@@ -48,18 +48,12 @@ class registerController extends Controller
         $user->password = bcrypt(Input::get('password'));
         $user->confirmation_code = $confirmation_code;
         
+        
+        
+       
         $user->save();
         
-        
-        Mail::send('auth.emails.verify', $user->toArray(),  function($message) use ($user) {
-            $message->to($user->email);
-            $message->from('ia.utp2016@gmail.com');
-            $message->subject('Verifique su direccion de email');
-        });
-
-        //Flash::message('Gracias por registrarse. verifique su correo electronico.');
-        echo 'Gracias por registrarse. verifique su correo electronico.';
-        //return redirect('/');
+        return redirect('/');
     }
 
     

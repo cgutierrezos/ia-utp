@@ -23,6 +23,10 @@ function Edge(id, nodei, nodef, value=0){
 	this.getId=function(){
 		return this.id
 	}
+
+	this.contains=function(nodei, nodef){
+		return this.getNodeI().getName()==nodei.getName() && this.getNodeF().getName()==nodef.getName()
+	}
 }
 
 
@@ -103,7 +107,8 @@ function Edges(edges=[]){
 	this.getEdgeByNodes=function(nodei, nodef){
 		if(nodei!=null && nodef!=null){
 			for (var i = this.getSize() - 1; i >= 0; i--) {
-				if(this.edges[i].getNodeI().getId() == nodei.getId() && this.edges[i].getNodeF().getId() == nodef.getId()){
+				if((this.edges[i].getNodeI().getId() == nodei.getId() && this.edges[i].getNodeF().getId() == nodef.getId()) || 
+					(this.edges[i].getNodeI().getId() == nodef.getId() && this.edges[i].getNodeF().getId() == nodei.getId())){
 					return this.edges[i]
 				}
 			}

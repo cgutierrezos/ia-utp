@@ -11,6 +11,7 @@
 	<script src="{{ asset('js/edge.js') }}"></script>
 	<script src="{{ asset('js/grafo.js') }}"></script>
 	<script src="{{ asset('js/busqueda_ciega.js') }}"></script>
+	<script src="{{ asset('js/busqueda_guiada.js') }}"></script>
 	<script src="{{ asset('js/grafo_animacion.js') }}"></script>
 	<link rel="stylesheet" type="text/css" href="{{ asset('plugins/vis/dist/vis.css') }}">
 	
@@ -49,7 +50,9 @@
 
 		var iniciar_animacion=true
 		var animacion=null
-		var grafo, grafo_animacion, Busqueda, node=null
+		var cont=false
+		var ruta=null
+		var grafo, grafo_animacion, Busqueda, node, container, tipo_busqueda=null
 
 		document.getElementById("body").onresize =resize_canvas() 
 
@@ -87,14 +90,23 @@
 		
 
 		function animar(){
-			grafo_animacion.animation(Busqueda.getArcosRecorridos(), Busqueda.getNodoSolucion())
+			if(tipo_busqueda<2){
+				grafo_animacion.animationCiega(Busqueda.getArcosRecorridos(), Busqueda.getNodoSolucion())
+			}else{
+				if(!cont){
+					ruta=Busqueda.getDijkstra().getRuta()
+					cont=true
+				}
+				grafo_animacion.animationGuiada(ruta)
+			}
+			
 			
 		}
 
 
 		// create a network
-		var container = document.getElementById('mynetwork');
-		var tipo_busqueda=<?php echo $search ?>;
+		container = document.getElementById('mynetwork');
+		tipo_busqueda=<?php echo $search ?>;
 
 		grafo = new Grafo()
 		if(tipo_busqueda<2){
@@ -116,13 +128,19 @@
 
 		
 
-		Busqueda=new BusquedaCiega(grafo)
-		if(tipo_busqueda==0)
+		
+		if(tipo_busqueda==0){
+			Busqueda=new BusquedaCiega(grafo)
 			Busqueda.recorridoAnchura(grafo.getNodes().getNodeByName("RAIZ"))
-		else if(tipo_busqueda==1)
+		}else if(tipo_busqueda==1){
+			Busqueda=new BusquedaCiega(grafo)
 			Busqueda.recorridoProfundidad(grafo.getNodes().getNodeByName("RAIZ"))
-		else if(tipo_busqueda==3){
-			Busqueda.recorridoProfundidad(grafo.getNodes().getNodeByName("cali"))
+		}else if(tipo_busqueda==2){
+			Busqueda=new BusquedaGuiada(grafo)
+
+			var inicio="<?php echo $inicio ?>"
+			var fin="<?php echo $fin ?>"
+			Busqueda.recorridoRutaCorta(grafo.getNodes().getNodeByName(inicio), grafo.getNodes().getNodeByName(fin))
 		}
 		
 		var data = {

@@ -4,6 +4,7 @@ function GrafoAnimacion(grafo){
   	this.vis_edges=new vis.DataSet([])
 	this.fin_animacion=false
 	this.edge_cont=0
+	this.solucion="[- "
 
 	this.setGrafo=function(grafo=null){
 		this.grafo=grafo
@@ -68,7 +69,7 @@ function GrafoAnimacion(grafo){
 
 	
 
-	this.animation = function (edges, node_sol){
+	this.animationCiega = function (edges, node_sol){
 		
 		if(this.edge_cont<edges.length){
 
@@ -93,6 +94,36 @@ function GrafoAnimacion(grafo){
 				}else{
 					alert("NO SE ENCONTRO SOLUCION")
 				}
+				this.fin_animacion=true
+			}	
+		}
+
+	}
+
+
+
+
+	this.animationGuiada = function (adys){
+		
+		if(this.edge_cont<adys.length){
+
+
+			this.NodeSeleccion(adys[this.edge_cont].getNodoActual(), "green")
+			if(adys[this.edge_cont].getNodoPredecesor()!=null){
+				this.NodeSeleccion(adys[this.edge_cont].getNodoPredecesor(), "green")
+				this.EdgeSeleccion(this.grafo.getEdges().getEdgeByNodes(adys[this.edge_cont].getNodoActual(), adys[this.edge_cont].getNodoPredecesor()), "green")
+			}
+			
+			
+			
+			this.solucion+=" "+adys[this.edge_cont].getNodoActual().getName()+" -"
+			this.edge_cont++
+			
+			
+		}else{
+			if(!this.fin_animacion){
+				this.solucion+="]"
+				alert("La ruta mas corta es: "+this.solucion)
 				this.fin_animacion=true
 			}	
 		}

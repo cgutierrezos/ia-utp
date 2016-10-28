@@ -63,20 +63,20 @@ class grafoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showRuta($id)
+    public function showRuta(Request $request, $id)
     {
 
         $nodes= node::where('grafo_id', $id)->get()->all();
         $edges = edge::where('grafo_id', $id)->get()->all();        
-        return view('home.animacion.animacion2', ['search' => 2, 'nodes' => $nodes, 'edges' => $edges]);
+        return view('home.animacion.animacion2', ['search' => 2, 'nodes' => $nodes, 'edges' => $edges, 'inicio' => $request->inicio, 'fin' => $request->fin]);
     }
 
     public function showAnchura(){
-        return view('home.animacion.animacion2', ['search' => 0, 'nodes' => [], 'edges'=> []]);
+        return view('home.animacion.animacion2', ['search' => 0, 'nodes' => [], 'edges'=> [], 'inicio' => 0, 'fin' => 0]);
     }
 
     public function showProfundidad(){
-        return view('home.animacion.animacion2', ['search' => 1, 'nodes' => [], 'edges'=> []]);
+        return view('home.animacion.animacion2', ['search' => 1, 'nodes' => [], 'edges'=> [], 'inicio' => 0, 'fin' => 0]);
     }
 
     /**

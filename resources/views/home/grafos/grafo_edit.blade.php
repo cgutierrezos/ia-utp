@@ -39,9 +39,21 @@
 						<tfoot>
 							<tr>
 								<td>
-									<ul class="actions small">
-										<li><a href="/animaciones/ruta-corta/<?php echo $grafo ?>" class="button special small" ><span>Animar Grafo</span></a></li>
-									</ul>
+									<form method="get" action="/animaciones/ruta-corta/<?php echo $grafo ?>">
+										<div class="row uniform 50%">
+											<div class="6u 12u$(xsmall)">
+												<input type="text" name="inicio" id="inicio" value="" placeholder="Nodo Inicio">
+											</div>
+											<div class="6u$ 12u$(xsmall)">
+												<input type="text" name="fin" id="fin" value="" placeholder="Nodo Fin">
+											</div>
+											<div class="12u$">
+												<ul class="actions">
+													<li><input type="submit" value="Animar Grafo" class="special"></li>
+												</ul>
+											</div>
+										</div>
+									</form>
 								</td>
 							</tr>
 						</tfoot>
