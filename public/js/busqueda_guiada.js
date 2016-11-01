@@ -101,8 +101,9 @@ function BusquedaGuiada(grafo){
 
     this.dijkstra=function(nodoi, nodof){
         alert("entro a run")
-        var edges=[]
-         for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
+        var edges=null
+        for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
+            edges=[]
             for (var j = this.grafo.getEdges().getSize() - 1; j >= 0; j--) {
                 if(this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()){                    
                     edges[this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
