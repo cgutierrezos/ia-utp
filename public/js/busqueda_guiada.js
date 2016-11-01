@@ -97,7 +97,8 @@ function BusquedaGuiada(grafo){
     this.graph=new Graph()
 
 
-    this.run=function(nodoi, nodof){
+    this.dijkstra=function(nodoi, nodof){
+        alert("entro a run")
         var edgesi=[]
         var edgesf=[]
         for (var i = this.grafo.getNodes().length - 1; i >= 0; i--) {
@@ -113,7 +114,8 @@ function BusquedaGuiada(grafo){
             this.graph.addVertex(this.grafo.getEdges()[j].getNodeI().getName(), edgesf)
         }
 
-        console.log(this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse());
+        alert(this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse())
+        
     }
 
     

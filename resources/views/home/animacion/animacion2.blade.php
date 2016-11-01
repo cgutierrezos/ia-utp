@@ -140,7 +140,7 @@
 
 			var inicio="<?php echo $inicio ?>"
 			var fin="<?php echo $fin ?>"
-			Busqueda.run(grafo.getNodes().getNodeByName(inicio), grafo.getNodes().getNodeByName(fin))
+			Busqueda.dijkstra(grafo.getNodes().getNodeByName(inicio), grafo.getNodes().getNodeByName(fin))
 		}
 		
 		var data = {
