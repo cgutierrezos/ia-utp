@@ -103,8 +103,8 @@ function BusquedaGuiada(grafo){
         alert("entro a run")
         var edgesi=[]
         var edgesf=[]
-        for (var i = this.grafo.getNodes().length - 1; i >= 0; i--) {
-            for (var j = this.grafo.getEdges().length - 1; j >= 0; j--) {
+        for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
+            for (var j = this.grafo.getEdges().getSize() - 1; j >= 0; j--) {
                 if(this.grafo.getNodes()[i].getName() == this.grafo.getEdges()[j].getNodeI().getName() ||
                     this.grafo.getNodes()[i].getName() == this.grafo.getEdges()[j].getNodeF().getName()){
                     edgesf[this.grafo.getEdges()[j].getNodeF().getName()]=this.grafo.getEdges()[j].getValue()
