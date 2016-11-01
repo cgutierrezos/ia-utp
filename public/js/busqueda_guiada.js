@@ -101,19 +101,16 @@ function BusquedaGuiada(grafo){
 
     this.dijkstra=function(nodoi, nodof){
         alert("entro a run")
-        var edgesi=[]
-        var edgesf=[]
-        for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
+        var edges=[]
+         for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
             for (var j = this.grafo.getEdges().getSize() - 1; j >= 0; j--) {
-                if(this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName() ||
-                    this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()){
-                    edgesf[this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
-                    edgesi[this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
+                if(this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()){                    
+                    edges[this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
                 }
             }
 
-            this.graph.addVertex(this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName(), edgesi)
-            this.graph.addVertex(this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName(), edgesf)
+            this.graph.addVertex(this.grafo.getNodes().getNodeByIndex(i).getName(), edges)
+            
         }
 
         var cadena=""
