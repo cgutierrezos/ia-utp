@@ -100,7 +100,7 @@ class grafoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $node1 =node::where('name',$request->inicio)->get();
+        $node1 = node::where('name', $request->inicio)->get()->first();
         if(count($node1)==0){
             $node1=new node();
             $node1->grafo_id=$id;
@@ -111,7 +111,7 @@ class grafoController extends Controller
         
 
         
-        $node2 =node::where('name',$request->fin)->get();
+        $node2 = node::where('name', $request->fin)->get()->first();
         if(count($node2)==0){
             $node2=new node();
             $node2->grafo_id=$id;
@@ -121,7 +121,7 @@ class grafoController extends Controller
         }
         
 
-        $edge =edge::where('nodei_id',$node1->id)->where('nodef_id',$nodef->id)->get();
+        $edge =edge::where('nodei_id', $node1->id)->where('nodef_id', $nodef->id)->get();
         if(count($edge)==0){;
             $edge=new edge();
             $edge->grafo_id=$id;
