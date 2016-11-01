@@ -34,6 +34,8 @@ function Graph(){
     this.vertices[name] = edges;
   }
 
+
+
   this.shortestPath = function (start, finish) {
     var nodes = new PriorityQueue(),
         distances = {},
@@ -114,8 +116,18 @@ function BusquedaGuiada(grafo){
             this.graph.addVertex(this.grafo.getEdges()[j].getNodeI().getName(), edgesf)
         }
 
+        var cadena=""
+        for (var key in this.graph.vertices){
+            cadena+"{"
+            for(var key2 in this.graph[key]){
+                cadena+=key2+": "+this.grap[key][key2]+" ,"
+            }
+            cadena=" {"+key+": "+cadena+"} }\n"
+        }
+
+        alert("vertices: "+vertices)
         var ruta=this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse()
-        var cadena="[-"
+        cadena="[-"
         for (var i = ruta.length - 1; i >= 0; i--) {
             cadena+=" "+ruta[i].getName()+" -"
         }
