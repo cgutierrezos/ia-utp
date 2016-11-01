@@ -105,6 +105,7 @@ function BusquedaGuiada(grafo){
         for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
             edges=[]
             for (var j = this.grafo.getEdges().getSize() - 1; j >= 0; j--) {
+                alert("nodo: "+this.grafo.getNodes().getNodeByIndex(i).getName()+"  ==  "+this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()+" ?: "+this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName())
                 if(this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()){                    
                     edges[this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
                 }
