@@ -121,12 +121,12 @@ class grafoController extends Controller
         }
         
 
-        $edge =edge::where('nodei_id',$request->inicio)->where('nodef_id',$request->fin)->get();
+        $edge =edge::where('nodei_id',$node1->id)->where('nodef_id',$nodef->id)->get();
         if(count($edge)==0){;
             $edge=new edge();
             $edge->grafo_id=$id;
-            $edge->nodei_id=node::where('name',$request->inicio)->get()->first()->id;
-            $edge->nodef_id=node::where('name',$request->fin)->get()->first()->id;
+            $edge->nodei_id=$node1->id;
+            $edge->nodef_id=$nodef->id;
             $edge->value=$request->valor;
             $edge->save();
         }
