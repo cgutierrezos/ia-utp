@@ -113,7 +113,7 @@ function BusquedaGuiada(grafo){
             this.graph.addVertex(this.grafo.getEdges()[j].getNodeI().getName(), edgesf)
         }
 
-        console.log(g.shortestPath(nodoi, nodof).concat([nodoi]).reverse());
+        console.log(this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse());
     }
 
     
