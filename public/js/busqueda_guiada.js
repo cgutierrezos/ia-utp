@@ -118,7 +118,7 @@ function BusquedaGuiada(grafo){
 
         var cadena=""
         for (var key in this.graph.vertices){
-            cadena+"{"
+            cadena+="{"
             for(var key2 in this.graph[key]){
                 cadena+=key2+": "+this.grap[key][key2]+" ,"
             }
