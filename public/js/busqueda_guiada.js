@@ -103,15 +103,17 @@ function BusquedaGuiada(grafo){
         alert("entro a run")
         var edges=null
         for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
+
+            var nodo=this.grafo.getNodes().getNodeByIndex(i)
             edges=[]
-            for (var j = this.grafo.getEdges().getSize() - 1; j >= 0; j--) {
-                alert("nodo: "+this.grafo.getNodes().getNodeByIndex(i).getName()+"  ==  "+this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()+" ?: "+this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName())
-                if(this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()){                    
-                    edges[this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
-                }
+
+            for (var edge in this.grafo.getEdges().getEdgesFromNode(nodo)) {
+                
+                edges[edge.getNodeF().getName()]=edge.getValue()
+
             }
 
-            this.graph.addVertex(this.grafo.getNodes().getNodeByIndex(i).getName(), edges)
+            this.graph.addVertex(nodo.getName(), edges)
             
         }
 
