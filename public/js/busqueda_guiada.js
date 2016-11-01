@@ -100,7 +100,7 @@ function BusquedaGuiada(grafo){
 
 
     this.dijkstra=function(nodoi, nodof){
-        alert("entro a run")
+        alert("entro a run con nodoi: "+nodoi+"  nodof: "+nodof)
         var edges=null
         for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
 
@@ -127,7 +127,7 @@ function BusquedaGuiada(grafo){
         var ruta=this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse()
         cadena="[-"
         for (var i = ruta.length - 1; i >= 0; i--) {
-            cadena+=" "+ruta[i].getName()+" -"
+            cadena+=" "+ruta[i]+" -"
         }
         alert(cadena+"]")
         
