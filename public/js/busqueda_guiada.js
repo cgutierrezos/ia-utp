@@ -105,15 +105,15 @@ function BusquedaGuiada(grafo){
         var edgesf=[]
         for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
             for (var j = this.grafo.getEdges().getSize() - 1; j >= 0; j--) {
-                if(this.grafo.getNodes()[i].getName() == this.grafo.getEdges()[j].getNodeI().getName() ||
-                    this.grafo.getNodes()[i].getName() == this.grafo.getEdges()[j].getNodeF().getName()){
-                    edgesf[this.grafo.getEdges()[j].getNodeF().getName()]=this.grafo.getEdges()[j].getValue()
-                    edgesi[this.grafo.getEdges()[j].getNodeI().getName()]=this.grafo.getEdges()[j].getValue()
+                if(this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName() ||
+                    this.grafo.getNodes().getNodeByIndex(i).getName() == this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()){
+                    edgesf[this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
+                    edgesi[this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName()]=this.grafo.getEdges().getEdgeByIndex(j).getValue()
                 }
             }
 
-            this.graph.addVertex(this.grafo.getEdges()[j].getNodeF().getName(), edgesi)
-            this.graph.addVertex(this.grafo.getEdges()[j].getNodeI().getName(), edgesf)
+            this.graph.addVertex(this.grafo.getEdges().getEdgeByIndex(j).getNodeF().getName(), edgesi)
+            this.graph.addVertex(this.grafo.getEdges().getEdgeByIndex(j).getNodeI().getName(), edgesf)
         }
 
         var cadena=""
