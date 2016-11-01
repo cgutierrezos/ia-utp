@@ -118,15 +118,11 @@ function BusquedaGuiada(grafo){
 
         var cadena=""
         for (var key in this.graph.vertices){
-            cadena+="{"
-            for(var key2 in this.graph[key]){
-                cadena+=key2+": "+this.grap[key][key2]+" ,"
-            }
-            cadena=" {"+key+": "+cadena+"} }\n"
+            cadena+=" {"+key+": "+this.graph.vertices[key]+"} }\n"
         }
 
         alert("vertices: "+cadena)
-        
+
         var ruta=this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse()
         cadena="[-"
         for (var i = ruta.length - 1; i >= 0; i--) {
