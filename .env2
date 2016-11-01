@@ -1,28 +1,26 @@
-APP_ENV=production
+APP_ENV=local
 APP_DEBUG=false
 APP_KEY=base64:/3AufiZsw2xqBccRH8iH3qz2BDtOaOnafDbg7idKWhM=
-APP_URL=http://ia-utp.herokuapp.com/
+APP_URL=http://ia-utp.herokuapp.com
 
-DB_CONNECTION=pgsql
-DB_HOST=ec2-174-129-29-118.compute-1.amazonaws.com
+DB_CONNECTION=mysql
+DB_HOST=ec2-204-236-228-133.compute-1.amazonaws.com
 DB_PORT=5432
-DB_DATABASE=d51v0v2b9al7gp
-DB_USERNAME=permphalngohpb
-DB_PASSWORD=QDqbym2-z1OA4yAY1uq4ZWFlww
+DB_DATABASE=db05okf4e46f60
+DB_USERNAME=lrhzmvzwyecxhn
+DB_PASSWORD=6P661KpQIG9EZEoK_ADDswTAx0
 
 CACHE_DRIVER=file
 SESSION_DRIVER=file
 QUEUE_DRIVER=sync
 
-REDIS_HOST=ec2-174-129-29-118.compute-1.amazonaws.com
-REDIS_PASSWORD=h
-REDIS_PORT=11689
+REDIS_HOST=ec2-54-243-52-211.compute-1.amazonaws.com
+REDIS_PASSWORD=0x47cMy-bU1SZN2O76J_HHJmNm
+REDIS_PORT=5432
 
-MAIL_DRIVER=mailgun
-MAIL_HOST=smtp.mailgun.org
-MAIL_PORT=587
-MAIL_USERNAME=sandbox84824d3519054cc5928d1abe194fa6b3.mailgun.org
-MAIL_PASSWORD=d23ea65e3f81d7685b7dda55aa3cf791
-MAIL_ENCRYPTION=tls
-MAILGUN_DOMAIN=sandbox84824d3519054cc5928d1abe194fa6b3.mailgun.org
-MAILGUN_PASS=key-db11abeac5ced707a7e20865fd90c9d6
+MAIL_DRIVER=smtp
+MAIL_HOST=mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
