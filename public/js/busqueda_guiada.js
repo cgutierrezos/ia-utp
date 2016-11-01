@@ -114,7 +114,12 @@ function BusquedaGuiada(grafo){
             this.graph.addVertex(this.grafo.getEdges()[j].getNodeI().getName(), edgesf)
         }
 
-        alert(this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse())
+        var ruta=this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse()
+        var cadena="[-"
+        for (var i = ruta.length - 1; i >= 0; i--) {
+            cadena+=" "+ruta[i].getName()+" -"
+        }
+        alert(cadena+"]")
         
     }
 
