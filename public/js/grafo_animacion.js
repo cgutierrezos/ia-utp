@@ -125,7 +125,7 @@ function GrafoAnimacion(grafo){
 		}else{
 			if(!this.fin_animacion){
 				this.solucion+="]"
-				alert("La ruta mas corta es: "+this.solucion+"  y la distanica recorrida es: "+this.min_distancia)
+				alert("La ruta mas corta es : "+this.solucion+"  y la distanica recorrida es : "+this.min_distancia)
 				this.fin_animacion=true
 			}	
 		}
