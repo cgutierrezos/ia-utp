@@ -5,6 +5,7 @@ function GrafoAnimacion(grafo){
 	this.fin_animacion=false
 	this.edge_cont=0
 	this.solucion="[- "
+	this.min_distancia=0
 
 	this.setGrafo=function(grafo=null){
 		this.grafo=grafo
@@ -117,13 +118,14 @@ function GrafoAnimacion(grafo){
 			
 			
 			this.solucion+=" "+adys[this.edge_cont].getNodoActual().getName()+" -"
+			this.min_distancia+=adys[this.edge_cont].getDistancia()
 			this.edge_cont++
 			
 			
 		}else{
 			if(!this.fin_animacion){
 				this.solucion+="]"
-				alert("La ruta mas corta es: "+this.solucion)
+				alert("La ruta mas corta es: "+this.solucion+"  y la distanica recorrida es: "+this.min_distancia)
 				this.fin_animacion=true
 			}	
 		}
