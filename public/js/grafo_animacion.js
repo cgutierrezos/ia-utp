@@ -111,8 +111,8 @@ function GrafoAnimacion(grafo){
 
 			this.NodeSeleccion(adys[this.edge_cont].getNodoActual(), "green")
 			if(adys[this.edge_cont].getNodoPredecesor()!=null){
-				
-				this.min_distancia+=adys[this.edge_cont].getDistancia()
+
+				this.min_distancia=adys[this.edge_cont].getDistancia()
 				this.NodeSeleccion(adys[this.edge_cont].getNodoPredecesor(), "green")
 				this.EdgeSeleccion(this.grafo.getEdges().getEdgeByNodes(adys[this.edge_cont].getNodoActual(), adys[this.edge_cont].getNodoPredecesor()), "green")
 			}
