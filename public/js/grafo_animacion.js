@@ -27,7 +27,9 @@ function GrafoAnimacion(grafo){
 
 
 
-	this.addEdge = function(edge){	
+	this.addEdge = function(edge){
+
+		
 		this.vis_edges.add({id: edge.getId(), from: edge.getNodeI().getId(), to: edge.getNodeF().getId(), label: edge.getValue(), color:"blue", font: {align: 'top'}})
 	}
 
@@ -109,6 +111,8 @@ function GrafoAnimacion(grafo){
 
 			this.NodeSeleccion(adys[this.edge_cont].getNodoActual(), "green")
 			if(adys[this.edge_cont].getNodoPredecesor()!=null){
+				
+				this.min_distancia+=adys[this.edge_cont].getDistancia()
 				this.NodeSeleccion(adys[this.edge_cont].getNodoPredecesor(), "green")
 				this.EdgeSeleccion(this.grafo.getEdges().getEdgeByNodes(adys[this.edge_cont].getNodoActual(), adys[this.edge_cont].getNodoPredecesor()), "green")
 			}
@@ -116,7 +120,6 @@ function GrafoAnimacion(grafo){
 			
 			
 			this.solucion+=" "+adys[this.edge_cont].getNodoActual().getName()+" -"
-			this.min_distancia+=adys[this.edge_cont].getDistancia()
 			this.edge_cont++
 			
 			
