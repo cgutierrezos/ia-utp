@@ -1,94 +1,4 @@
-/**
- * Basic priority queue implementation. If a better priority queue is wanted/needed,
- * this code works with the implementation in google's closure library (https://code.google.com/p/closure-library/).
- * Use goog.require('goog.structs.PriorityQueue'); and new goog.structs.PriorityQueue()
- */
-function PriorityQueue () {
-  this._nodes = [];
 
-  this.enqueue = function (priority, key) {
-    this._nodes.push({key: key, priority: priority });
-    this.sort();
-  }
-  this.dequeue = function () {
-    return this._nodes.shift().key;
-  }
-  this.sort = function () {
-    this._nodes.sort(function (a, b) {
-      return a.priority - b.priority;
-    });
-  }
-  this.isEmpty = function () {
-    return !this._nodes.length;
-  }
-}
-
-/**
- * Pathfinding starts here
- */
-function Graph(){
-  var INFINITY = 1/0;
-  this.vertices = {};
-
-  this.addVertex = function(name, edges){
-    this.vertices[name] = edges;
-  }
-
-
-
-  this.shortestPath = function (start, finish) {
-    var nodes = new PriorityQueue(),
-        distances = {},
-        previous = {},
-        path = [],
-        smallest, vertex, neighbor, alt;
-
-    for(vertex in this.vertices) {
-      if(vertex === start) {
-        distances[vertex] = 0;
-        nodes.enqueue(0, vertex);
-      }
-      else {
-        distances[vertex] = INFINITY;
-        nodes.enqueue(INFINITY, vertex);
-      }
-
-      previous[vertex] = null;
-    }
-
-    while(!nodes.isEmpty()) {
-      smallest = nodes.dequeue();
-
-      if(smallest === finish) {
-        path;
-
-        while(previous[smallest]) {
-          path.push(smallest);
-          smallest = previous[smallest];
-        }
-
-        break;
-      }
-
-      if(!smallest || distances[smallest] === INFINITY){
-        continue;
-      }
-
-      for(neighbor in this.vertices[smallest]) {
-        alt = distances[smallest] + this.vertices[smallest][neighbor];
-
-        if(alt < distances[neighbor]) {
-          distances[neighbor] = alt;
-          previous[neighbor] = smallest;
-
-          nodes.enqueue(alt, neighbor);
-        }
-      }
-    }
-
-    return path;
-  }
-}
 
 
 
@@ -96,51 +6,9 @@ function BusquedaGuiada(grafo){
 
 	this.grafo=grafo
     this.dijkstra=new Dijkstra()
-    this.graph=new Graph()
 
-
-    this.dijkstra=function(nodoi, nodof){
-        alert("entro a run con nodoi: "+nodoi+"  nodof: "+nodof)
-        var edges=null
-        var nodo=null
-        var edge=null
-        for (var i = this.grafo.getNodes().getSize() - 1; i >= 0; i--) {
-
-            nodo=this.grafo.getNodes().getNodeByIndex(i)
-            edges=[]
-
-            for (var edge in this.grafo.getEdges().getEdgesFromNode(nodo)) {
-                
-                edges[edge.getNodeF().getName()]=edge.getValue()
-
-            }
-
-            this.graph.addVertex(nodo.getName(), edges)
-            
-        }
-
-        var cadena=""
-        for (var key in this.graph.vertices){
-            cadena+=" {"+key+": "+this.graph.vertices[key]+"} }\n"
-        }
-
-        alert("vertices: "+cadena)
-
-        var ruta=this.graph.shortestPath(nodoi, nodof).concat([nodoi]).reverse()
-        cadena="[-"
-        for (var i = ruta.length - 1; i >= 0; i--) {
-            cadena+=" "+ruta[i]+" -"
-        }
-        alert(cadena+"]")
-        
-    }
 
     
-
-
-
-
-
 
     this.getDijkstra=function(){
         return this.dijkstra
@@ -298,11 +166,11 @@ function Dijkstra(){
         
 
         var fromnode=grafo.getEdges().getEdgesFromNode(ady.getNodoActual())
-        var tonode=grafo.getEdges().getEdgesToNode(ady.getNodoActual())
+        //var tonode=grafo.getEdges().getEdgesToNode(ady.getNodoActual())
 
         
 
-        var edges_candidatos=new Edges(fromnode.concat(tonode))
+        var edges_candidatos=new Edges(fromnode)
         
         
         var adys_cantidatos=this.edgesToAdys(grafo, ady.getDistancia() , edges_candidatos, ady.getIteracion())
