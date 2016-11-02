@@ -24,6 +24,8 @@
                                 </span>
                             @endif
                         </div>
+                    </div>
+                    <div class="row uniform 50%">
                         <div class="12u$">
                             <a href="/password/reset">Olvido su clave?</a>
                         </div>
