@@ -13,10 +13,10 @@
                 <form method="post" action="/auth/register">
                     <div class="row uniform 50%">
                         <div class="6u 12u$(xsmall)">
-                            <input type="text" name="usuario" id="usuario" value="" placeholder="Nombre Usuario">
-                            @if ($errors->has('usuario'))
+                            <input type="text" name="username" id="username" value="" placeholder="Nombre Usuario">
+                            @if ($errors->has('username'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('usuario') }}</strong>
+                                    <strong>{{ $errors->first('username') }}</strong>
                                 </span>
                             @endif
                         </div>

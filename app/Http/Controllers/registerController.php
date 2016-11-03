@@ -19,14 +19,14 @@ class registerController extends Controller
     {
     	
         $rules = [
-            'usuario' => 'required|min:6|unique:users',
+            'username' => 'required|min:6|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:6'
         ];
 
 
         $input = Input::only(
-            'usuario',
+            'username',
             'email',
             'password',
             'password_confirmation'
@@ -43,7 +43,7 @@ class registerController extends Controller
         $confirmation_code = str_random(30);
 
         $user = new User();
-        $user->username = Input::get('usuario');
+        $user->username = Input::get('username');
         $user->email = Input::get('email');
         $user->password = bcrypt(Input::get('password'));
         $user->confirmation_code = $confirmation_code;
