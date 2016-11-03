@@ -9,7 +9,7 @@ use App\Http\Requests;
 use App\edge;
 use App\node;
 use App\grafo;
-
+use Validator;
 use Auth;
 
 
