@@ -78,4 +78,9 @@ class registerController extends Controller
         return redirect('/login');
     }
 
+
+    public function bienviedo(){
+        return view('home');
+    }
+
 }
