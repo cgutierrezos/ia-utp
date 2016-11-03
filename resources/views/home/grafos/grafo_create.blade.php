@@ -47,6 +47,11 @@
 					<div class="row uniform 50%">
 						<div class="6u 12u$(xsmall)">
 							<input type="text" name="nombre" id="nombre" value="" placeholder="Nombre del Grafo">
+							@if ($errors->has('nombre'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('nombre') }}</strong>
+                                </span>
+                            @endif
 						</div>
 						<div class="12u$">
 							<ul class="actions">

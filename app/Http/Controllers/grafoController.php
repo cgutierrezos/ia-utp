@@ -46,6 +46,17 @@ class grafoController extends Controller
      */
     public function store(Request $request)
     {
+
+        $v = Validator::make($request->all(), [
+            'nombre' => 'required'
+        ]);
+ 
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+
+
         $grafo = new grafo();
         $grafo->name = $request->nombre;
         $grafo->user_id = Auth::user()->id;
@@ -65,6 +76,16 @@ class grafoController extends Controller
      */
     public function showRuta(Request $request, $id)
     {
+
+        $v = Validator::make($request->all(), [
+            'inicio' => 'required|in:edge',
+            'fin' => 'required|in:edge'
+        ]);
+ 
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
 
         $nodes= node::where('grafo_id', $id)->get()->all();
         $edges = edge::where('grafo_id', $id)->get()->all();        
@@ -100,6 +121,18 @@ class grafoController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $v = Validator::make($request->all(), [
+            'inicio' => 'required',
+            'fin' => 'required',
+            'valor' => 'required|numeric|max:255'
+        ]);
+ 
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+
         $node1 = node::where('name', $request->inicio)->get()->first();
         if(count($node1)==0){
             $node1=new node();

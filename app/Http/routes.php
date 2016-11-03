@@ -98,13 +98,14 @@ Route::group(['prefix' => 'animaciones', 'middleware' => 'auth'], function(){
 		]);
 
 		Route::group(['prefix' => 'edge'], function(){
-			Route::get('destroy/{id}', [
-				'uses' => 'edgesController@destroy',
+			
+			Route::get('destroy/{idg}/{id}', [
+				'uses' => 'edgeController@destroy',
 				'as' => 'edgeDestroy'
 			]);
 
 			Route::post('store', [
-				'uses' => 'edgesController@store',
+				'uses' => 'edgeController@store',
 				'as' => 'edgeStore'
 			]);
 		});

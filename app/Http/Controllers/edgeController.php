@@ -14,6 +14,8 @@ use App\grafo;
 
 use Auth;
 
+use Validator;
+
 class edgeController extends Controller
 {
     /**
@@ -44,6 +46,19 @@ class edgeController extends Controller
      */
     public function store(Request $request)
     {
+
+        $v = Validator::make($request->all(), [
+            'inicio' => 'required',
+            'fin' => 'required',
+            'valor' => 'required|numeric|max:255'
+        ]);
+ 
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+
+
         $node1 =node::where('name',$request->inicio)->get();
         if(count($node1)==0){
             $node1=new node();
@@ -120,9 +135,11 @@ class edgeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idg, $id)
     {
+
         $deleted =edge::destroy($id);
-        return redirect('animaciones/grafo/edit/'.$id);
+
+        return redirect('animaciones/grafo/edit/'.$idg);
     }
 }
