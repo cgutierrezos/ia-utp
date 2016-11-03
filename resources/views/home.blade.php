@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Bienvenido <?php echo $usuario ?></div>
+                <div class="panel-heading">Bienvenido</div>
 
                 <div class="panel-body">
-                    <p style="color:green ">
+                    <p style="color:green;">
                         Registro exitoso, Intenta loguearte con tu correo y password!
                     </p>
                 </div>
