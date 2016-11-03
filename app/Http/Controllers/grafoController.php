@@ -48,7 +48,7 @@ class grafoController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'nombre' => 'required'
+            'nombre' => 'required|alpha_num'
         ]);
  
         if ($v->fails())
@@ -78,8 +78,8 @@ class grafoController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'inicio' => 'required|in:edge',
-            'fin' => 'required|in:edge'
+            'inicio' => 'required|exists:node,name',
+            'fin' => 'required|exists:node,name|different:inicio'
         ]);
  
         if ($v->fails())
@@ -123,9 +123,9 @@ class grafoController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'inicio' => 'required',
-            'fin' => 'required',
-            'valor' => 'required|numeric|max:255'
+            'inicio' => 'required|alpha_num',
+            'fin' => 'required|alpha_num|different:inicio',
+            'valor' => 'required|numeric|min:1|max:999999'
         ]);
  
         if ($v->fails())

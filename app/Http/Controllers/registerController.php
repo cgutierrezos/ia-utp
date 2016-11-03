@@ -19,14 +19,14 @@ class registerController extends Controller
     {
     	
         $rules = [
-            'username' => 'required|min:6|unique:users',
+            'usuario' => 'required|min:6|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:6'
         ];
 
 
         $input = Input::only(
-            'username',
+            'usuario',
             'email',
             'password',
             'password_confirmation'
