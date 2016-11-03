@@ -141,7 +141,7 @@ Route::get('register/verify/{confirmationCode}', [
 ]);
 
 
-Route::post('home', [
+Route::get('home', [
 	'uses' => 'registerController@bienvenido',
 	'as' => 'UsuarioBienvenido'
 ]);
