@@ -79,7 +79,7 @@ class registerController extends Controller
     }
 
 
-    public function bienviedo(){
+    public function bienvenido(){
         return view('home');
     }
 
