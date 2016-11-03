@@ -39,7 +39,7 @@ return [
     'distinct'             => 'El campo :attribute tiene un valor duplicado.',
     'email'                => 'El campo :attribute no corresponde con una dirección de e-mail válida.',
     'filled'               => 'El campo :attribute es obligatorio.',
-    'exists'               => 'El campo :attribute no existe.',
+    'exists'               => 'El campo :attribute no existe en :other.',
     'image'                => 'El campo :attribute debe ser una imagen.',
     'in'                   => 'El campo :attribute debe ser igual a alguno de estos valores :values',
     'in_array'             => 'El campo :attribute no existe en :other.',
