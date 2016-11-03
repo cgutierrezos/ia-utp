@@ -47,13 +47,11 @@ class registerController extends Controller
         $user->email = Input::get('email');
         $user->password = bcrypt(Input::get('password'));
         $user->confirmation_code = $confirmation_code;
-        
-        
-        
+  
        
         $user->save();
         
-        return redirect('/home', ['usuario' => $user->username]);
+        return redirect('/home');
     }
 
     
