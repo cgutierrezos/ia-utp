@@ -78,8 +78,8 @@ class grafoController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'inicio' => 'required|different:fin|exists:node,name,inicio',
-            'fin' => 'required|exists:node,name,fin'
+            'inicio' => 'required|different:fin|exists:nodes,name',
+            'fin' => 'required|exists:nodes,name'
         ]);
  
         if ($v->fails())
