@@ -43,7 +43,7 @@ class registerController extends Controller
         $confirmation_code = str_random(30);
 
         $user = new User();
-        $user->username = Input::get('username');
+        $user->username = Input::get('usuario');
         $user->email = Input::get('email');
         $user->password = bcrypt(Input::get('password'));
         $user->confirmation_code = $confirmation_code;
