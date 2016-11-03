@@ -53,7 +53,7 @@ class registerController extends Controller
        
         $user->save();
         
-        return redirect('/');
+        return redirect('/home', ['usuario' => $user->username]);
     }
 
     
