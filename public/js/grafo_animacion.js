@@ -30,7 +30,7 @@ function GrafoAnimacion(grafo){
 	this.addEdge = function(edge){
 
 		
-		this.vis_edges.add({id: edge.getId(), from: edge.getNodeI().getId(), to: edge.getNodeF().getId(), label: edge.getValue(), color:"blue", font: {align: 'top'}})
+		this.vis_edges.add({id: edge.getId(), from: edge.getNodeI().getId(), to: edge.getNodeF().getId(), label: edge.getValue(), color:"blue", arrows: 'to',  font: {align: 'top'}})
 	}
 
 
