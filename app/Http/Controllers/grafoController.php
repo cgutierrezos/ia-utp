@@ -78,7 +78,7 @@ class grafoController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'inicio' => 'required|different:fin|exists:nodes,name',
+            'inicio' => 'required|different:fin|exists:nodes,name,rutas',
             'fin' => 'required|exists:nodes,name'
         ]);
  
