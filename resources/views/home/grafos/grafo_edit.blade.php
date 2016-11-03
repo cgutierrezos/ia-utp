@@ -42,18 +42,18 @@
 									<form method="get" action="/animaciones/ruta-corta/<?php echo $grafo ?>">
 										<div class="row uniform 50%">
 											<div class="6u 12u$(xsmall)">
-												<input type="text" name="inicio" id="inicio" value="" placeholder="Nodo Inicio">
-												@if ($errors->has('inicio'))
+												<input type="text" name="inicio_ruta" id="inicio_ruta" value="" placeholder="Nodo Inicio">
+												@if ($errors->has('inicio_ruta'))
 					                                <span class="help-block">
-					                                    <strong>{{ $errors->first('inicio') }}</strong>
+					                                    <strong>{{ $errors->first('inicio_ruta') }}</strong>
 					                                </span>
 					                            @endif
 											</div>
 											<div class="6u$ 12u$(xsmall)">
-												<input type="text" name="fin" id="fin" value="" placeholder="Nodo Fin">
-												@if ($errors->has('fin'))
+												<input type="text" name="fin_ruta" id="fin_ruta" value="" placeholder="Nodo Fin">
+												@if ($errors->has('fin_ruta'))
 					                                <span class="help-block">
-					                                    <strong>{{ $errors->first('fin') }}</strong>
+					                                    <strong>{{ $errors->first('fin_ruta') }}</strong>
 					                                </span>
 					                            @endif
 											</div>

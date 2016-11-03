@@ -78,8 +78,8 @@ class grafoController extends Controller
     {
 
         $v = Validator::make($request->all(), [
-            'inicio' => 'required|different:fin|exists:nodes,name,grafo_id,'.$id,
-            'fin' => 'required|exists:nodes,name,grafo_id,'.$id
+            'inicio_ruta' => 'required|different:fin_ruta|exists:nodes,name,grafo_id,'.$id,
+            'fin_ruta' => 'required|exists:nodes,name,grafo_id,'.$id
         ]);
  
         if ($v->fails())
@@ -89,7 +89,7 @@ class grafoController extends Controller
 
         $nodes= node::where('grafo_id', $id)->get()->all();
         $edges = edge::where('grafo_id', $id)->get()->all();        
-        return view('home.animacion.animacion2', ['search' => 2, 'nodes' => $nodes, 'edges' => $edges, 'inicio' => $request->inicio, 'fin' => $request->fin]);
+        return view('home.animacion.animacion2', ['search' => 2, 'nodes' => $nodes, 'edges' => $edges, 'inicio' => $request->inicio_ruta, 'fin' => $request->fin_ruta]);
     }
 
     public function showAnchura(){
