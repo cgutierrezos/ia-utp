@@ -140,6 +140,10 @@ Route::get('register/verify/{confirmationCode}', [
     'uses' => 'RegisterController@confirm'
 ]);
 
+Route::get('home', function(){
+	return view("home");
+});
+
 
 
 Route::auth();
