@@ -141,7 +141,7 @@ Route::get('register/verify/{confirmationCode}', [
 ]);
 
 
-Route::get('/home', function(){
+Route::get('home', function(){
 	return view("home");
 });
 
