@@ -50,7 +50,7 @@ class edgeController extends Controller
         $v = Validator::make($request->all(), [
             'inicio' => 'required|alpha_num',
             'fin' => 'required|alpha_num|different:inicio',
-            'valor' => 'required|numeric|min:1|max:999999'
+            'valor' => 'required|integer|min:1|max:999999'
         ]);
  
         if ($v->fails())
