@@ -15,7 +15,7 @@ class NodesTable extends Migration
         Schema::create('nodes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('grafo_id')->unsigned();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->boolean('value');
             $table->unique(array('grafo_id','name'));
             $table->timestamps();
