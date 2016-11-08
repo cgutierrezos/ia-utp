@@ -18,6 +18,7 @@ class EdgesTable extends Migration
             $table->integer('nodei_id')->unsigned();
             $table->integer('nodef_id')->unsigned();
             $table->integer('value')->unsigned();
+            $table->unique(array('user_id','node_i','node_f'));
             $table->timestamps();
 
             $table->foreign('grafo_id')->references('id')->on('grafos')->onDelete('cascade');

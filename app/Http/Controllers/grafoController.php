@@ -133,7 +133,7 @@ class grafoController extends Controller
             return redirect()->back()->withInput()->withErrors($v->errors());
         }
 
-        $node1 = node::where('name', $request->inicio)->get()->first();
+        $node1 = node::where('name', $request->inicio)->where('grafo_id', $id)->get()->first();
         if(count($node1)==0){
             $node1=new node();
             $node1->grafo_id=$id;
@@ -144,7 +144,7 @@ class grafoController extends Controller
         
 
         
-        $node2 = node::where('name', $request->fin)->get()->first();
+        $node2 = node::where('name', $request->fin)->where('grafo_id', $id)->get()->first();
         if(count($node2)==0){
             $node2=new node();
             $node2->grafo_id=$id;
@@ -154,7 +154,7 @@ class grafoController extends Controller
         }
         
 
-        $edge =edge::where('nodei_id', $node1->id)->where('nodef_id', $node2->id)->get();
+        $edge =edge::where('nodei_id', $node1->id)->where('nodef_id', $node2->id)->where('grafo_id', $id)->get();
         if(count($edge)==0){;
             $edge=new edge();
             $edge->grafo_id=$id;

@@ -17,6 +17,7 @@ class NodesTable extends Migration
             $table->integer('grafo_id')->unsigned();
             $table->string('name')->unique();
             $table->boolean('value');
+            $table->unique(array('grafo_id','name'));
             $table->timestamps();
 
             $table->foreign('grafo_id')->references('id')->on('grafos')->onDelete('cascade');
