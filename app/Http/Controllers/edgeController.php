@@ -137,8 +137,19 @@ class edgeController extends Controller
      */
     public function destroy($idg, $id)
     {
+        $edge =edge::find($id)->first();
+        
+        $edgesi = edge::where('grafo_id', $edge->grafo_id)->where('nodei_id', $edge->nodei_id)->orWhere('nodef_id', $edge->nodei_id)->get();
+        if(count($edgesi)<=1){
+            node::remove($edge->nodei_id);
+        }
 
-        $deleted =edge::destroy($id);
+        $edgesf = edge::where('grafo_id', $edge->grafo_id)->where('nodei_id', $edge->nodef_id)->orWhere('nodef_id', $edge->nodef_id)->get();
+        if(count($edgesf)<=1){
+            node::remove($edge->nodef_id);
+        }
+
+        edge::remove($id);
 
         return redirect('animaciones/grafo/edit/'.$idg);
     }
