@@ -178,6 +178,6 @@ class grafoController extends Controller
     public function destroy($id)
     {
         $grafo =grafo::destroy($id);
-        return redirect('grafo/create');
+        return redirect('animaciones/grafo/create');
     }
 }
