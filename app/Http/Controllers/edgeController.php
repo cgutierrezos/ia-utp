@@ -138,18 +138,19 @@ class edgeController extends Controller
     public function destroy($idg, $id)
     {
         $edge =edge::find($id);
+        $destroy=edge::destroy($id);
         
         $edgesi = edge::where('grafo_id', $edge->grafo_id)->where('nodei_id', $edge->nodei_id)->orWhere('nodef_id', $edge->nodei_id)->where('grafo_id', $edge->grafo_id)->get();
-        if(count($edgesi)<=1){
-            node::destroy($edge->nodei_id);
+        if(count($edgesi)==0){
+            $nd=node::destroy($edge->nodei_id);
         }
 
         $edgesf = edge::where('grafo_id', $edge->grafo_id)->where('nodei_id', $edge->nodef_id)->orWhere('nodef_id', $edge->nodef_id)->where('grafo_id', $edge->grafo_id)->get();
-        if(count($edgesf)<=1){
-            node::destroy($edge->nodef_id);
+        if(count($edgesf)==0){
+            $nd=node::destroy($edge->nodef_id);
         }
 
-        edge::destroy($id);
+        
 
         return redirect('animaciones/grafo/edit/'.$idg);
     }

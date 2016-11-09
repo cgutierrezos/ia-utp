@@ -77,15 +77,35 @@ class grafoController extends Controller
     public function showRuta(Request $request, $id)
     {
 
-        $v = Validator::make($request->all(), [
+        $v1 = Validator::make($request->all(), [
             'inicio_ruta' => 'required|different:fin_ruta|exists:nodes,name,grafo_id,'.$id,
             'fin_ruta' => 'required|exists:nodes,name,grafo_id,'.$id
         ]);
  
-        if ($v->fails())
+        if ($v1->fails())
         {
-            return redirect()->back()->withInput()->withErrors($v->errors());
+            return redirect()->back()->withInput()->withErrors($v1->errors());
         }
+
+        $nodei= node::where('grafo_id', $id)->where('name',$request->inicio_ruta)->get()->first();
+        $nodef= node::where('grafo_id', $id)->where('name',$request->fin_ruta)->get()->first();
+
+        $data =new Array(
+            'nodei' => $nodei->id,
+            'nodef' => $nodef->id
+
+        );
+
+        $v2 = Validator::make($data, [
+            'nodei' => 'exists:edges,nodei_id,grafo_id,'.$id,
+            'nodef' => 'exists:edges,nodef_id,grafo_id,'.$id
+        ]);
+ 
+        if ($v2->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v2->errors());
+        }
+
 
         $nodes= node::where('grafo_id', $id)->get()->all();
         $edges = edge::where('grafo_id', $id)->get()->all();        
