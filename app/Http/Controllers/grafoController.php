@@ -87,7 +87,7 @@ class grafoController extends Controller
             return redirect()->back()->withInput()->withErrors($v1->errors());
         }
 
-        $nodei= node::where('grafo_id', $id)->where('name',$request->inicio_ruta)->get()->first();
+        /*$nodei= node::where('grafo_id', $id)->where('name',$request->inicio_ruta)->get()->first();
         $nodef= node::where('grafo_id', $id)->where('name',$request->fin_ruta)->get()->first();
 
         $data =new Array(
@@ -105,6 +105,7 @@ class grafoController extends Controller
         {
             return redirect()->back()->withInput()->withErrors($v2->errors());
         }
+        */
 
 
         $nodes= node::where('grafo_id', $id)->get()->all();
