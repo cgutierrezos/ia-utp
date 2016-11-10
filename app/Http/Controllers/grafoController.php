@@ -105,7 +105,7 @@ class grafoController extends Controller
         {
             return redirect()->back()->withInput()->withErrors($v2->errors());
         }
-        */
+        
 
 
         $nodes= node::where('grafo_id', $id)->get()->all();
