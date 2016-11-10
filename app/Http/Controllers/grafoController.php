@@ -87,18 +87,18 @@ class grafoController extends Controller
             return redirect()->back()->withInput()->withErrors($v1->errors());
         }
 
-        /*$nodei= node::where('grafo_id', $id)->where('name',$request->inicio_ruta)->get()->first();
+        $nodei= node::where('grafo_id', $id)->where('name',$request->inicio_ruta)->get()->first();
         $nodef= node::where('grafo_id', $id)->where('name',$request->fin_ruta)->get()->first();
 
-        $data =new Array(
+        $data =array(
             'nodei' => $nodei->id,
             'nodef' => $nodef->id
 
         );
 
         $v2 = Validator::make($data, [
-            'nodei' => 'exists:edges,nodei_id,grafo_id,'.$id,
-            'nodef' => 'exists:edges,nodef_id,grafo_id,'.$id
+            'nodei' => 'exists:edges,nodei_id,nodef_id,nodef,grafo_id,'.$id,
+            'nodef' => 'exists:edges,nodef_id,nodei_id,nodei,grafo_id,'.$id
         ]);
  
         if ($v2->fails())
