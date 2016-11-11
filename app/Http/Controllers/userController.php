@@ -108,6 +108,6 @@ class userController extends Controller
     }
 
     public function resetPassword(){
-        return view('auth.password.reset');
+        return view('auth.passwords.reset');
     }
 }
