@@ -83,4 +83,6 @@ class registerController extends Controller
         return view('home');
     }
 
+    
+
 }

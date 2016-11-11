@@ -147,6 +147,15 @@ Route::get('home', [
 ]);
 
 
+Route::get('password/reset', [
+	'uses' => 'userController@resetPassword',
+	'as' => 'resetPassword'
+]);
+
+
+
+
+
 
 
 Route::auth();
