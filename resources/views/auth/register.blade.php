@@ -16,7 +16,7 @@
                             <input type="text" name="username" id="username" value="" placeholder="Nombre Usuario">
                             @if ($errors->has('username'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('username') }}</strong>
+                                    <strong style="color : red">{{ $errors->first('username') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -24,7 +24,7 @@
                             <input type="text" name="email" id="email" value="" placeholder="E-Mail">
                             @if ($errors->has('email'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                    <strong style="color : red">{{ $errors->first('email') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -32,7 +32,7 @@
                             <input type="password" name="password" id="password" value="" placeholder="Clave">
                             @if ($errors->has('password'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
+                                    <strong style="color : red">{{ $errors->first('password') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -40,7 +40,7 @@
                             <input type="password" name="password_confirmation" id="password_confirmation" value="" placeholder="Confirme la Clave">
                             @if ($errors->has('password_confirmation'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    <strong style="color : red">{{ $errors->first('password_confirmation') }}</strong>
                                 </span>
                             @endif
                         </div>

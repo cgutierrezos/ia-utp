@@ -1,3 +1,4 @@
+
 <section id="banner">
 	<div class="content">
 		@yield('content')

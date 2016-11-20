@@ -12,7 +12,7 @@
                             <input type="email" name="email" id="email" value="" placeholder="Email">
                             @if ($errors->has('email'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                    <strong style="color : red">{{ $errors->first('email') }}</strong>
                                 </span>
                             @endif
                         </div>
@@ -20,7 +20,7 @@
                             <input type="password" name="password" id="password" value="" placeholder="Password">
                             @if ($errors->has('password'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('password') }}</strong>
+                                    <strong style="color : red">{{ $errors->first('password') }}</strong>
                                 </span>
                             @endif
                         </div>

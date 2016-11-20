@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class GrafosTable extends Migration
+class AtributosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,10 @@ class GrafosTable extends Migration
      */
     public function up()
     {
-        Schema::create('grafos', function (Blueprint $table) {
+        Schema::create('atributos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('name');
-            $table->text('comments');
-            $table->unique(array('user_id','name'));
+            $table->string('name')->unique();
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -31,6 +26,6 @@ class GrafosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('grafos');
+        Schema::drop('atributos');
     }
 }

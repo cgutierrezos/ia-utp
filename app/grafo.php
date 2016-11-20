@@ -10,7 +10,7 @@ class grafo extends Model
 
     protected $table = 'grafos';
 
-    protected $fillable = ['name', 'user'];
+    protected $fillable = ['user_id','name','comments'];
 
     public function nodes(){
     	return $this->hasMany('App\node');

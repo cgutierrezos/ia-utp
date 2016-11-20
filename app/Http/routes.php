@@ -14,13 +14,13 @@
 Route::get('/', function(){
 	return view('welcome');
 
-})->middleware('auth');
+});
 
 	
 
 Route::get('algoritmos', function(){
 	return view('home.algoritmos.algoritmos');
-})->middleware('auth');
+});
 
 
 Route::group(['prefix' => 'algoritmo'], function(){
@@ -51,7 +51,7 @@ Route::group(['prefix' => 'algoritmo'], function(){
 });
 
 
-Route::group(['prefix' => 'animaciones', 'middleware' => 'auth'], function(){
+Route::group(['prefix' => 'animaciones'], function(){
 
 	Route::get('anchura', [
 		'uses' => 'grafoController@showAnchura',
@@ -97,6 +97,11 @@ Route::group(['prefix' => 'animaciones', 'middleware' => 'auth'], function(){
 			'as' => 'grafoDestroy'
 		]);
 
+		Route::get('get-ruta/{id}', [
+			'uses' => 'grafoController@getruta',
+			'as' => 'grafoGetRuta'
+		]);
+
 		Route::group(['prefix' => 'edge'], function(){
 			
 			Route::get('destroy/{idg}/{id}', [
@@ -112,6 +117,65 @@ Route::group(['prefix' => 'animaciones', 'middleware' => 'auth'], function(){
 
 		
 	});
+
+});
+
+Route::group(['prefix' => 'sistema-experto'], function(){
+
+	Route::get('index', [
+		'uses' => 'sistemaexpertoController@index',
+		'as' => 'sistemaIndex'
+	]);
+
+	Route::get('create', [
+		'uses' => 'sistemaexpertoController@create',
+		'as' => 'sistemaCreate'
+	]);
+
+	Route::post('store', [
+		'uses' => 'sistemaexpertoController@store',
+		'as' => 'sistemaStore'
+	]);
+
+	Route::get('show/{i}', [
+		'uses' => 'sistemaexpertoController@show',
+		'as' => 'sistemaShow'
+	]);
+
+	Route::get('edit/{i}', [
+		'uses' => 'sistemaexpertoController@edit',
+		'as' => 'sistemaEdit'
+	]);
+
+	Route::get('{id}/ask/{r?}', [
+		'uses' => 'sistemaexpertoController@ask',
+		'as' => 'sistemaAsk'
+	]);
+
+	Route::post('update/{i}', [
+		'uses' => 'sistemaexpertoController@update',
+		'as' => 'sistemaUpdate'
+	]);
+
+	Route::get('destroy/{i}', [
+		'uses' => 'sistemaexpertoController@destroy',
+		'as' => 'sistemaDestroy'
+	]);
+
+	Route::get('download/{i}', [
+		'uses' => 'sistemaexpertoController@download',
+		'as' => 'sistemaDownload'
+	]);
+
+	Route::get('upload', [
+		'uses' => 'sistemaexpertoController@upload',
+		'as' => 'sistemaUpload'
+	]);
+
+	Route::post('store-upload', [
+		'uses' => 'sistemaexpertoController@storeupload',
+		'as' => 'sistemaUStorepload'
+	]);
 
 });
 

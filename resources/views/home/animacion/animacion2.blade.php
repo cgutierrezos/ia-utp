@@ -4,6 +4,7 @@
 
 @section('body')
 
+
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('plugins/vis/dist/vis.js') }}"></script>
 	<script src="{{ asset('plugins/vis/examples/googleAnalytics.js') }}"></script>
@@ -35,11 +36,11 @@
 
 		}
 
-  </style>
+  	</style>
 
 	@include('templates.banner_animation')
 
-	<div id="mynetwork" style="background-color: #FFFFFF; width:100%; height:100%;">
+	<div id="mynetwork"  style="background-color: #FFFFFF; width:90%; height:95%; margin-left: 5%; margin-right: 5%; margin-bottom: 5%; border-style: inset;">
 		
 	</div>
 
@@ -153,6 +154,8 @@
 		
 
 	</script>
+
+
 
 
 
